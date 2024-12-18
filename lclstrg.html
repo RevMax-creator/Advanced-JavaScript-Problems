@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+    <style>
+        body {
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        .note {
+            padding: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button>Add a note</button>
+    <div class="note"></div>
+    <script>
+        function saveNoteToLocalStorage(note) {
+            // item = JSON.stringify(note)
+            localStorage.setItem("note", note)
+        }
+        if (localStorage.getItem('note')) {
+            document.querySelector(".note").innerHTML = localStorage.getItem('note');
+        }
+
+        document.querySelector("button").addEventListener("click", () => {
+            let item = prompt("Enter the note")
+            saveNoteToLocalStorage(item)
+            document.querySelector(".note").innerHTML = localStorage.getItem('note');
+        })
+    </script>
+</body>
+
+</html>

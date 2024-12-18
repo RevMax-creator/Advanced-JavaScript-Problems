@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Scroller</title>
+    <style>
+        .page {
+            height: 400vh;
+            position: absolute;
+            background-color: crimson;
+            width: 90vw;
+        }
+
+        .scroll {
+            height: 40px;
+            width: 40px;
+            border-radius: 80px;
+            position: sticky;
+            top: 550px;
+            left: 1150px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="scroll"></div>
+    </div>
+    </div>
+    <script>
+        document.querySelector(".scroll").addEventListener("click", () => {
+            window.scroll({
+                top: 100,
+                left: 100,
+                behavior: "smooth"
+            });
+        })
+    </script>
+</body>
+
+</html>
